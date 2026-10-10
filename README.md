@@ -97,8 +97,7 @@ SysTick turns on the rear red LEDs and turns off the front yellow LEDs.
 
 ## Known Issues or Limitations
 
-- The bumper switches have no hardware debounce filter. One press can
-  produce multiple falling edges.
+- The bumper switches weren't debounce though it was intentional to explore the bouncing behavior in the oscilloscope, a part of the lab exercise.
 
 
 ## Author Contribution
