@@ -24,13 +24,18 @@
 #define TIMER_A0_PERIOD_CONSTANT 15000
 
 /**
- * @brief
+ * @brief Initialize Timer A0 PWM outputs on P2.6 and P2.7.
  *
- * @param period_constant
+ * Uses SMCLK divided by 8 with up/down mode and Toggle/Reset outputs.
+ * CCR[0] sets the period, while CCR[3] and CCR[4] set the duty cycles.
+ * Returns immediately if either duty value is greater than or equal
+ * to the period constant.
  *
- * @param duty_cycle_1
+ * @param period_constant Timer count used to set the PWM period.
  *
- * @param duty_cycle_2
+ * @param duty_cycle_1 Compare count for P2.6, connected to the right motor.
+ *
+ * @param duty_cycle_2 Compare count for P2.7, connected to the left motor.
  *
  * @return None
  */

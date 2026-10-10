@@ -1,4 +1,4 @@
-/**
+ /**
  * @file Motor.h
  * @brief Header file for the Motor driver.
  *
@@ -19,7 +19,11 @@
 #include "../inc/Timer_A0_PWM.h"
 
 /**
- * @brief
+ * @brief Initialize the motor direction, enable, and PWM signals.
+ *
+ * Configures P5.4 and P5.5 for direction and P3.6 and P3.7 for enabling
+ * the motors. Clears these outputs and initializes Timer A0 with a
+ * 20 ms period and zero duty values.
  *
  * @param None
  *
@@ -56,22 +60,28 @@ void Motor_Forward(uint16_t left_duty_cycle, uint16_t right_duty_cycle);
 void Motor_Backward(uint16_t left_duty_cycle, uint16_t right_duty_cycle);
 
 /**
- * @brief
+ * @brief Turn the robot left using the specified duty values.
  *
- * @param left_duty_cycle
+ * Runs the left motor backward and the right motor forward.
+ * Updates both PWM duty values and enables the motors.
  *
- * @param right_duty_cycle
+ * @param left_duty_cycle Left motor compare count, from 0 to 14999.
+ *
+ * @param right_duty_cycle Right motor compare count, from 0 to 14999.
  *
  * @return None
  */
 void Motor_Left(uint16_t left_duty_cycle, uint16_t right_duty_cycle);
 
 /**
- * @brief
+ * @brief Turn the robot right using the specified duty values.
  *
- * @param left_duty_cycle
+ * Runs the left motor forward and the right motor backward.
+ * Updates both PWM duty values and enables the motors.
  *
- * @param right_duty_cycle
+ * @param left_duty_cycle Left motor compare count, from 0 to 14999.
+ *
+ * @param right_duty_cycle Right motor compare count, from 0 to 14999.
  *
  * @return None
  */

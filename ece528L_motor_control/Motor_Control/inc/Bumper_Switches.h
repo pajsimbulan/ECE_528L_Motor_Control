@@ -57,9 +57,13 @@
 void (*Bumper_Task)(uint8_t bumper_switch_state);
 
 /**
- * @brief
+ * @brief Initialize the six bumper switch inputs and their interrupts.
  *
- * @param task A pointer to the user-defined function that will be called on a falling edge event.
+ * Enables pull-up resistors and configures falling-edge interrupts.
+ * Stores the user-defined function to call when a bumper interrupt occurs
+ * and enables the Port 4 interrupt in the NVIC.
+ *
+ * @param task A pointer to the function called during a bumper interrupt.
  *
  * @return None
  */
